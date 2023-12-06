@@ -1,0 +1,51 @@
+Írj egy javascript függvényt, ami egy string-et, amely egy quiz-hez tartozó kérdéseket tartalmazza, kérdésenként javascript objektumokká bont.
+
+Egy minta string:
+"01_Jogi_alapok
+--------------
+1. 
+Az alább felsoroltak közül melyik nem jellemző a társadalmi és jogi normákra?
+a) A hipotetikus szerkezet.
+b) A szankció.
+-c) A múltra irányultság.
+d) Mindegyik jellemző.
+
+2. 
+Az alábbiak közül melyik nem tartozik a társadalmi normák lényeges mozzanatai közé?
+a) A magatartás leírása.
+b) A magatartás minősítése. (tilos, kötelező stb.)
+c) A következmények leírása.
+-d) Mindegyik oda tartozik.
+
+3. 
+Melyik állítás a legjellemzőbb a jogi normákra?
+a) A társadalom alkotja, érvényesülését az állam biztosítja.
+-b) Az állam alkotja, érvényesülését az állam biztosítja.
+c) Az állam alkotja, érvényesülését a társadalom biztosítja.
+d) A társadalom alkotja, érvényesülését a társadalom biztosítja.
+
+3/A. 
+Az alábbi 3 állítás (a,b,c) közül melyik hamis?
+a) A jogi normákat gyorsabban meg lehet változtatni, mint az erkölcsi normákat.
+b) Az erkölcsi normák szankciórendszerét a társadalmi nyomás jellemzi.
+c) A jogi norma az emberek formális magatartására irányul.
+-d) Mindhárom előző állítás igaz."
+
+Ennek értelmében a helyes választ a '-' karakter jelöli. A '/A' egy kérdés variációját jelenti, ugyanúgy kell kezelni, mintha szimpla kérdés lenne.
+A kérdés objektumokat egy tömbbe kell gyűjteni, például:
+"const questions = [
+    {
+        question: "Az alább felsoroltak közül melyik nem jellemző a társadalmi és jogi normákra?",
+        optionA: "A hipotetikus szerkezet.",
+        optionB: "A szankció.",
+        optionC: "A múltra irányultság.",
+        optionD: "Mindegyik jellemző.",
+        correctOption: "optionC"
+    },
+]"
+Vedd figyelembe a következő specifikációkat is:
+1. Amelyik kérdés sorszáma tartalmaz '_' karaktert, azt ki kell hagyni, például: "01_Jogi_alapok".
+2. A kérdésekre a válaszok ne egy tömbben legyenek, hanem külön értékek legyenek az objektumban.
+   A válaszok az alábbi kulcsokban legyenek: optionA, optionB, optionC, optionD.
+3. A válaszok ne tartalmazzák a betűt és a zárójelet, például: "a)" ne legyen benne.
+4. A kérdés variációja külön kérdés objektumban legyen, hasonlóan az összes többi kérdéshez. 
